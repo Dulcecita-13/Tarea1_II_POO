@@ -1,0 +1,59 @@
+namespace TareaPOO
+{
+    public class Ejercicio16
+    {
+        public Ejercicio16()
+        {
+            /*Sistema de calificaciones UNAH - Ingresar nota de 0-100
+             y mostrar: letra (A, B, C, D, F), descripción y si aprobó
+              o reprobó. Incluir validación de rango.*/
+
+            Console.WriteLine("Ingrese la nota (0-100):");
+            double.TryParse(Console.ReadLine(), out double nota);
+
+            if (nota<0||nota>100)
+            {
+                Console.WriteLine("Nota no valida.Ingrese un valor entre 0 y 100.");
+            }
+                else
+                {
+                    string letra;
+                    string descripcion;
+                    string resultado;
+
+                    if (nota >= 90)
+                    {
+                        letra = "A";
+                        descripcion = "Excelente";
+                        resultado = "Aprobado";
+                    }
+                    else if (nota >= 80)
+                    {
+                        letra = "B";
+                        descripcion = "Bueno";
+                        resultado = "Aprobado";
+                    }
+                    else if (nota >= 70)
+                    {
+                        letra = "C";
+                        descripcion = "Regular";
+                        resultado = "Aprobado";
+                    }
+                    else if (nota >= 60)
+                    {
+                        letra = "D";
+                        descripcion = "Deficiente";
+                        resultado = "Reprobado";
+                    }
+                    else
+                    {
+                        letra = "F";
+                        descripcion = "Insuficiente";
+                        resultado = "Reprobado";
+                    }
+
+                Console.WriteLine($"Letra: {letra}, Descripción: {descripcion}, Resultado: {resultado}");
+            }
+        }
+    }
+}

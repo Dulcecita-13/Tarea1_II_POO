@@ -1,0 +1,56 @@
+namespace TareaPOO
+{
+    public class Ejercicio25
+    {
+        public Ejercicio25()
+        {
+            /*25. Promedio con centinela - Leer números hasta que el usuario ingrese -1. Calcular y mostrar el
+promedio, el valor máximo y el mínimo de los valores ingresados (sin contar el -1).*/
+
+            int suma = 0;
+            int cantidad = 0;
+            int maximo = int.MinValue;
+            int minimo = int.MaxValue;
+
+            Console.WriteLine("Ingrese números para calcular el promedio, máximo y mínimo (ingrese -1 para finalizar):");
+
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out int numero))
+                {
+                    if (numero == -1)
+                    {
+                        break;
+                    }
+
+                    suma += numero;
+                    cantidad++;
+
+                    if (numero > maximo)
+                    {
+                        maximo = numero;
+                    }
+
+                    if (numero < minimo)
+                    {
+                        minimo = numero;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Por favor, ingrese un número válido.");
+                }
+            }
+
+            if (cantidad > 0)
+            {
+                double promedio = (double)suma / cantidad;
+                Console.WriteLine($"Promedio: {promedio}, Máximo: {maximo}, Mínimo: {minimo}");
+            }
+            else
+            {
+                Console.WriteLine("No se ingresaron números válidos.");
+            }
+        }
+    }
+}

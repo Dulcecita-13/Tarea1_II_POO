@@ -1,0 +1,38 @@
+namespace TareaPOO
+{
+    public class Ejercicio03
+    {
+        public Ejercicio03()
+        {
+            /*Intercambio de valores - Declarar dos 
+            variables con valores iniciales, intercambiar 
+            sus valores usando una variable temporal y 
+            mostrar el antes y el después. Reto adicional: 
+            hacerlo sin variable temporal, usando solo operaciones aritméticas.*/
+
+            Console.WriteLine("Ingrese el primer valor:");
+            double.TryParse(Console.ReadLine(), out double valor1);
+            Console.WriteLine("Ingrese el segundo valor:");
+            double.TryParse(Console.ReadLine(),out double valor2);
+
+            Console.WriteLine($"Antes del intercambio: valor 1 = {valor1}, Valor 2 = {valor2}");
+
+            // con variable temporal
+            double temp = valor1;
+            valor1 = valor2;
+            valor2 = temp;
+
+            Console.WriteLine($"Después del intercambio (con variable temporal): Valor 1 = {valor1}, Valor 2 = {valor2}");
+
+            // con operaciones
+            valor1 = valor1 + valor2; 
+            valor2 = valor1 - valor2; 
+            valor1 = valor1 - valor2; 
+
+            Console.WriteLine($"Después del intercambio (sin variable temporal): Valor 1 = {valor1}, Valor 2 = {valor2}");
+
+
+            
+        }
+    }
+}

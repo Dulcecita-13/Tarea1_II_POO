@@ -1,0 +1,59 @@
+namespace TareaPOO
+{
+    public class Ejercicio05
+    {
+        public Ejercicio05()
+        {
+            /*Conversión de temperatura - Crear 
+            un menú que permita convertir entre 
+            Celsius, Fahrenheit y Kelvin. El 
+            usuario elige la conversión deseada.*/
+
+            Console.WriteLine("Ingrese la conversión de temperatura que desea realizar:");
+            Console.WriteLine("1. Celsius a Fahrenheit");
+            Console.WriteLine("2. Celsius a Kelvin");
+            Console.WriteLine("3. Fahrenheit a Celsius");
+            Console.WriteLine("4. Fahrenheit a Kelvin");
+            Console.WriteLine("5. Kelvin a Celsius");
+            Console.WriteLine("6. Kelvin a Fahrenheit");
+            int.TryParse(Console.ReadLine(), out int opcion);
+
+            Console.WriteLine("Ingrese la temperatura a convertir:");
+            double.TryParse(Console.ReadLine(), out double temp);
+            double resultado = 0;
+
+            switch (opcion)
+            {
+                case 1:
+                    resultado=(temp*9/5)+32;
+                    Console.WriteLine($"{temp} °C = {resultado} °F");
+                    break;
+                case 2:
+                    resultado =temp+273.15;
+                    Console.WriteLine($"{temp} °C = {resultado} K");
+                    break;
+                case 3:
+                    resultado=(temp-32)*5/9;
+                    Console.WriteLine($"{temp} °F = {resultado} °C");
+                    break;
+                case 4:
+                    resultado=(temp-32)*5/9+273.15;
+                    Console.WriteLine($"{temp} °F = {resultado} K");
+                    break;
+                case 5:
+                    resultado=temp-273.15;
+                    Console.WriteLine($"{temp} K = {resultado} °C");
+                    break;
+                case 6:
+                    resultado=(temp-273.15)*9/5+32;
+                    Console.WriteLine($"{temp} K= {resultado} °F");
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida.");
+                    break;
+
+                
+            }
+        }
+    }
+}

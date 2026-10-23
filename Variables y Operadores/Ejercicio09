@@ -1,0 +1,39 @@
+namespace TareaPOO
+{
+    public class Ejercicio09
+    {
+        public Ejercicio09()
+        {
+            /*Cálculo de salario semanal - Ingresar horas trabajadas y 
+            tarifa por hora. Las horas extras (más
+de 44) se pagan al 150%. Mostrar desglose y total.*/
+
+            Console.WriteLine("Ingrese sus horas trabajadas:");
+            double.TryParse(Console.ReadLine(), out double horasTrabajadas);
+            Console.WriteLine("Ingresar tarifa por hora:");
+            double.TryParse(Console.ReadLine(), out double tarifaHora);
+
+            if (horasTrabajadas>0&&tarifaHora>0)
+            {
+                double salarioBase =horasTrabajadas*tarifaHora;
+                double salarioTotal=salarioBase;
+
+                if (horasTrabajadas > 44)
+                {
+                    double horasExtras=horasTrabajadas-44;
+                    double pagoHorasExtras=horasExtras*tarifaHora*1.5;
+                    salarioTotal+=pagoHorasExtras;
+
+                    Console.WriteLine($"Salario base: {salarioBase}");
+                    Console.WriteLine($"Pago por horas extras: {pagoHorasExtras}");
+                }
+
+                Console.WriteLine($"Salario total: {salarioTotal}");
+            }
+            else
+            {
+                Console.WriteLine("Los valores deben ser positivos.");
+            }
+        }
+    }
+}

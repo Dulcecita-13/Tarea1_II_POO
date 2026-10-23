@@ -1,0 +1,37 @@
+namespace TareaPOO
+{
+    public class Ejercicio15
+    {
+        public Ejercicio15()
+        {
+            /*15. Vocal o consonante - Solicitar una letra y 
+            determinar si es vocal o consonante usando switch.
+            Validar que el carácter ingresado sea realmente una letra.*/
+
+            Console.WriteLine("Ingrese una letra:");
+            char.TryParse(Console.ReadLine(), out char letra);
+
+            if (char.IsLetter(letra))
+            {
+                switch (char.ToLower(letra))
+                {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        Console.WriteLine($"{letra} es una vocal.");
+                        break;
+                    default:
+                        Console.WriteLine($"{letra} es una consonante.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("El carácter ingresado no es una letra.");
+            }
+        }
+
+    }
+}

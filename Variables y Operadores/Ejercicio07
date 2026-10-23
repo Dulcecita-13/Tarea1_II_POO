@@ -1,0 +1,25 @@
+namespace TareaPOO
+{
+    public class Ejercicio07
+    {
+        public Ejercicio07()
+        {
+            /*Tiempo transcurrido - Dadas dos horas en formato 24h 
+            (hora:minuto:segundo), calcular la diferencia en horas, minutos y segundos.*/
+
+            Console.WriteLine("Ingresar la primera hora en formato 24h (hora:minuto:segundo):");
+            string hora1 = Console.ReadLine();
+            Console.WriteLine("Ingressr la segunda hora en formato 24h (hora:minuto:segundo):");
+            string hora2 = Console.ReadLine();
+
+            TimeSpan tiempo1 = TimeSpan.Parse(hora1);
+            TimeSpan tiempo2 = TimeSpan.Parse(hora2);
+            TimeSpan diferencia = tiempo2 - tiempo1;
+
+            Console.WriteLine($"La diferencia es: {diferencia.Hours} horas, {diferencia.Minutes} minutos y {diferencia.Seconds} segundos.");
+
+
+
+        }
+    }
+}

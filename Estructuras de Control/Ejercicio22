@@ -1,0 +1,44 @@
+namespace TareaPOO
+{
+    public class Ejercicio22
+    {
+        public Ejercicio22()
+        {
+           /*22. Cajero automático - Simular retiro: verificar que el monto sea múltiplo de 20, no exceda el
+saldo (inicializado en código) y mostrar desglose de billetes entregados.*/ 
+
+            int saldo = 1000; 
+            Console.WriteLine($"Saldo disponible: ${saldo}");
+            Console.WriteLine("Ingrese el monto a retirar (múltiplo de 20):");
+            int.TryParse(Console.ReadLine(), out int monto);
+
+            if (monto<=0)
+            {
+                Console.WriteLine("Monto no válido. Ingrese un valor positivo.");
+            }
+            else if (monto % 20!=0)
+            {
+                Console.WriteLine("Monto no válido. Debe ser múltiplo de 20.");
+            }
+            else if (monto>saldo)
+            {
+                Console.WriteLine("Monto no válido. Excede el saldo disponible.");
+            }
+            else
+            {
+                saldo -= monto;
+                Console.WriteLine($"Retiro exitoso. Nuevo saldo: ${saldo}");
+
+                int billetes50 = monto / 50;
+                monto %= 50;
+                int billetes20 = monto / 20;
+
+                Console.WriteLine($"Desglose de billetes entregados:");
+                Console.WriteLine($"Billetes de $50: {billetes50}");
+                Console.WriteLine($"Billetes de $20: {billetes20}");
+            }
+        }
+        
+        
+}
+}

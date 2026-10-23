@@ -1,0 +1,41 @@
+namespace TareaPOO
+{
+    public class Ejercicio08
+    {
+        public Ejercicio08()
+        {
+            /*Desglose de billetes - Dado un monto en lempiras, 
+            mostrar la menor cantidad de billetes (500,
+100, 50, 20, 10, 5, 2, 1) necesarios.*/
+
+            Console.WriteLine("Ingresar el monto en lempiras:");
+            int.TryParse(Console.ReadLine(), out int monto);
+
+            if (monto > 0)
+            {
+                int[] billetes = {500, 100, 50, 20, 10, 5, 2, 1 };
+                int[] cantidadBilletes = new int[billetes.Length];
+
+                for (int i=0;i<billetes.Length;i++)
+                {
+                    cantidadBilletes[i] = monto / billetes[i];
+                    monto %= billetes[i];
+                }
+
+                Console.WriteLine("Desglose de billetes:");
+                for (int i=0;i<billetes.Length;i++)
+                {
+                    if (cantidadBilletes[i] > 0)
+                    {
+                        Console.WriteLine($"{billetes[i]} L: {cantidadBilletes[i]} billete(s)");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("El monto debe ser positivo.");
+            }
+        }
+    }
+
+}

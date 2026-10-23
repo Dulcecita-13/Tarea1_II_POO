@@ -1,0 +1,29 @@
+namespace TareaPOO
+{
+    public class Ejercicio06
+    {
+        public Ejercicio06()
+        {
+        /*Suma de dígitos - Dado un número 
+        entero positivo de tres dígitos, 
+        calcular la suma de sus dígitos usando 
+        únicamente división entera y módulo 
+        (sin ciclos ni conversión a texto).*/  
+
+        Console.WriteLine("Ingrese un número entero positivo de tres dígitos:");
+        int.TryParse(Console.ReadLine(), out int numero);
+        if (numero < 100 || numero > 999)
+            {
+                Console.WriteLine("El número ingresado no es de tres dígitos.");
+                return;
+            }
+            int digito1=numero/100; 
+            int digito2=(numero/10)%10; 
+            int digito3 = numero%10;
+
+            int suma =digito1+digito2+digito3;
+
+            Console.WriteLine($"La suma de los dígitos de {numero} es {suma}");
+        }
+    }
+}

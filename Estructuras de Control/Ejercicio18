@@ -1,0 +1,38 @@
+namespace TareaPOO
+{
+    public class Ejercicio18
+    {
+        public Ejercicio18()
+        {
+            /*18. Tarifa de estacionamiento - Calcular 
+            el pago según las horas estacionado: la primera hora 
+            cuesta L20, cada hora adicional L10, con un tope 
+            máximo de L100 por día. Validar que las horas
+sean positivas.*/
+
+            Console.WriteLine("Ingrese la cantidad de horas estacionado:");
+            double.TryParse(Console.ReadLine(), out double horas);
+
+            if (horas<0)
+            {
+                Console.WriteLine("Cantidad de horas no válida. Ingrese un valor positivo.");
+            }
+            else
+                {
+                    double tarifa = 20; 
+
+                    if (horas > 1)
+                        {
+                            tarifa += (horas - 1) * 10;
+                        }
+
+                    if (tarifa > 100)
+                        {
+                            tarifa = 100; // Tope máximo de L100 por día
+                        }
+
+                    Console.WriteLine($"Total a pagar: L{tarifa}");
+                }
+        }
+    }
+}

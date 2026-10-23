@@ -1,0 +1,99 @@
+namespace TareaPOO
+{
+    public class Ejercicio04
+    {
+        public Ejercicio04()
+        {
+            
+            /*Área y perímetro - Menú para 
+            calcular área y perímetro de: círculo, 
+            triángulo, rectángulo y trapecio. 
+            Validar que los valores ingresados 
+            sean positivos.*/
+
+            Console.WriteLine("Ingresar el numero de la figura de la que desea calcular área y perímetro:");
+            Console.WriteLine("1. Círculo");
+            Console.WriteLine("2. Triángulo");
+            Console.WriteLine("3. Rectángulo");
+            Console.WriteLine("4. Trapecio");
+            int.TryParse(Console.ReadLine(), out int op);
+
+            switch (op)
+            {
+                case 1:
+                    Console.WriteLine("Ingrese el radio del círculo:");
+                    double.TryParse(Console.ReadLine(), out double radio);
+                    if (radio > 0)
+                    {
+                        double areaCirculo = 3.14*Math.Pow(radio,2);
+                        double perimetroCirculo=2 *3.14*radio;
+                        Console.WriteLine($"Area del círculo: {areaCirculo}");
+                        Console.WriteLine($"Perimetro del círculo: {perimetroCirculo}");
+                    }
+                        else
+                            {
+                                Console.WriteLine("El valor ingresado debe ser positivo.");
+                            }
+                        break;
+                case 2:
+                    Console.WriteLine("Ingresar la base del triángulo:");
+                    double.TryParse(Console.ReadLine(), out double baseTriangulo);
+                    Console.WriteLine("Ingrese la altura del triángulo:");
+                    double.TryParse(Console.ReadLine(), out double alturaTriangulo);
+                    if (baseTriangulo>0&&alturaTriangulo>0)
+                    {
+                        double areaTriangulo=(baseTriangulo*alturaTriangulo)/2;
+                        double perimetroTriangulo=3*baseTriangulo;
+                        Console.WriteLine($"Area del triángulo: {areaTriangulo}");
+                        Console.WriteLine($"Perimetro del triángulo: {perimetroTriangulo}");
+                    }
+                        else
+                        {
+                            Console.WriteLine("Los valores ingresados deben ser positivos.");
+                        }
+                        break;
+                case 3:
+                    Console.WriteLine("Ingrese la base del rectángulo:");
+                    double.TryParse(Console.ReadLine(), out double baseRectangulo);
+                    Console.WriteLine("Ingrese la altura del rectángulo:");
+                    double.TryParse(Console.ReadLine(), out double alturaRectangulo);
+                    if (baseRectangulo>0&&alturaRectangulo>0)
+                    {
+                        double areaRectangulo=baseRectangulo*alturaRectangulo;
+                        double perimetroRectangulo=2*(baseRectangulo+alturaRectangulo);
+                        Console.WriteLine($"Area del rectángulo: {areaRectangulo}");
+                        Console.WriteLine($"Perimetro del rectángulo: {perimetroRectangulo}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Los valores ingresados deben ser positivos.");
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Ingresar la base mayor del trapecio:");
+                    double.TryParse(Console.ReadLine(), out double baseMayor);
+                    Console.WriteLine("Ingrese la base menor del trapecio:");
+                    double.TryParse(Console.ReadLine(), out double baseMenor);
+                    Console.WriteLine("Ingrese la altura del trapecio:");
+                    double.TryParse(Console.ReadLine(), out double alturaTrapecio);
+                    if (baseMayor>0&&baseMenor>0&&alturaTrapecio>0)
+                    {
+                        double areaTrapecio=((baseMayor+baseMenor)*alturaTrapecio)/2;
+                        double perimetroTrapecio=baseMayor+baseMenor + 2 *Math.Sqrt(Math.Pow((baseMayor-baseMenor) /2,2)+Math.Pow(alturaTrapecio, 2));
+                        Console.WriteLine($"Area del trapecio: {areaTrapecio}");
+                        Console.WriteLine($"Perimetro del trapecio: {perimetroTrapecio}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Los valores ingresados deben ser positivos.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Opción no valida.");
+                    break;
+
+
+        }
+    }
+}
+}

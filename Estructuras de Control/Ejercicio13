@@ -1,0 +1,60 @@
+namespace TareaPOO
+{
+    public class Ejercicio13
+    {
+        public Ejercicio13()
+        {
+            /*Día de la semana - Solicitar un número del 1 al 7 y mostrar 
+            el nombre del día correspondiente usando switch clásico; luego
+             resolverlo de nuevo usando una expresión switch.*/
+
+            Console.WriteLine("Ingrese un número del 1 al 7 para conocer el día de la semana correspondiente:");
+            int.TryParse(Console.ReadLine(), out int numeroDia);
+
+            // Usando switch clásico
+            switch (numeroDia)
+            {
+                case 1:
+                    Console.WriteLine("Lunes");
+                    break;
+                case 2:
+                    Console.WriteLine("Martes");
+                    break;
+                case 3:
+                    Console.WriteLine("Miércoles");
+                    break;
+                case 4:
+                    Console.WriteLine("Jueves");
+                    break;
+                case 5:
+                    Console.WriteLine("Viernes");
+                    break;
+                case 6:
+                    Console.WriteLine("Sábado");
+                    break;
+                case 7:
+                    Console.WriteLine("Domingo");
+                    break;
+                default:
+                    Console.WriteLine("Número no valido. Por favor, ingrese un número del 1 al 7.");
+                    break;
+            }
+
+            // Usando expresión switch
+            string nombreDia = numeroDia switch
+            {
+                1 => "Lunes",
+                2 => "Martes",
+                3 => "Miércoles",
+                4 => "Jueves",
+                5 => "Viernes",
+                6 => "Sábado",
+                7 => "Domingo",
+                _ => "Número no valido. Por favor, ingrese un número del 1 al 7."
+            };
+            Console.WriteLine(nombreDia);
+            
+
+        }
+    }
+}

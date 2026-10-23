@@ -1,0 +1,29 @@
+namespace TareaPOO
+{
+    public class Ejercicio29
+    {
+        Ejercicio29()
+        {
+            /*29. Serie Fibonacci - Generar los primeros N términos de Fibonacci. Mostrar también la suma total
+y el promedio.*/
+
+            Console.WriteLine("Ingrese el número de términos de Fibonacci que desea generar:");
+            int.TryParse(Console.ReadLine(), out int N);
+
+            int a = 0, b = 1, suma = 0;
+
+            Console.WriteLine("Serie Fibonacci:");
+            for (int i = 0; i < N; i++)
+            {
+                Console.Write($"{a} ");
+                suma += a;
+                int siguiente = a + b;
+                a = b;
+                b = siguiente;
+            }
+
+            double promedio = N > 0 ? (double)suma / N : 0;
+            Console.WriteLine($"\nSuma total: {suma}, Promedio: {promedio}");
+        }
+    }
+}

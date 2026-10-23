@@ -1,0 +1,57 @@
+namespace TareaPOO
+{
+    public class Ejercicio21
+    {
+        public Ejercicio21()
+        {
+            /*21. Validador de fecha - Ingresar día, mes y año por separado. Validar que sea una fecha real
+considerando días por mes y años bisiestos.*/
+
+            Console.WriteLine("Ingrese el año:");
+            int.TryParse(Console.ReadLine(), out int anio);
+            Console.WriteLine("Ingrese el mes (1-12):");
+            int.TryParse(Console.ReadLine(), out int mes);
+            Console.WriteLine("Ingrese el día:");
+            int.TryParse(Console.ReadLine(), out int dia);
+
+            if (anio < 0)
+            {
+                Console.WriteLine("Año no válido. Ingrese un valor positivo.");
+            }
+            else if (mes<1||mes>12)
+            {
+                Console.WriteLine("Mes no válido. Ingrese un valor entre 1 y 12.");
+            }
+            else
+            {
+                bool esBisiesto = (anio % 4 == 0 && anio % 100 != 0) || (anio % 400==0);
+                int diasMes;
+
+                switch (mes)
+                {
+                    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                        diasMes = 31;
+                        break;
+                    case 4: case 6: case 9: case 11:
+                        diasMes = 30;
+                        break;
+                    case 2:
+                        diasMes = esBisiesto ? 29 : 28;
+                        break;
+                    default:
+                        diasMes = 0; // Esto nunca debería ocurrir debido a la validación anterior
+                        break;
+                }
+
+                if (dia < 1 || dia > diasMes)
+                {
+                    Console.WriteLine($"Dia no válido para el mes {mes} del año {anio}. Ingrese un valor entre 1 y {diasMes}.");
+                }
+                else
+                {
+                    Console.WriteLine($"La fecha es válida: {dia}/{mes}/{anio}");
+                }
+            }
+        }
+    }
+}

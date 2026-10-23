@@ -1,0 +1,36 @@
+namespace TareaPOO
+{
+    public class Ejercicio24
+    {
+        public Ejercicio24()
+        {
+            /*24. Suma de pares e impares - Para los números del 1 al N (N ingresado por el usuario), calcular
+por separado la suma y la cantidad de números pares e impares.*/
+
+            Console.WriteLine("Ingrese un número N para calcular la suma de pares e impares del 1 al N:");
+            int.TryParse(Console.ReadLine(), out int N);
+
+            int sumaPares = 0;
+            int cantidadPares = 0;
+            int sumaImpares = 0;
+            int cantidadImpares = 0;
+
+            for (int i = 1; i <= N; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    sumaPares += i;
+                    cantidadPares++;
+                }
+                else
+                {
+                    sumaImpares += i;
+                    cantidadImpares++;
+                }
+            }
+
+            Console.WriteLine($"Suma de números pares: {sumaPares}, Cantidad de números pares: {cantidadPares}");
+            Console.WriteLine($"Suma de números impares: {sumaImpares}, Cantidad de números impares: {cantidadImpares}");
+        }
+    }
+}

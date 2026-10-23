@@ -1,0 +1,34 @@
+namespace TareaPOO
+{
+    public class Ejercicio10
+    {
+        public Ejercicio10()
+        {
+            /*Calculadora de préstamo simple - Solicitar monto, 
+            tasa de interés anual y plazo en meses.
+            Calcular el interés total y la cuota mensual fija.*/
+
+            Console.WriteLine("Ingrese el monto del préstamo:");
+            double.TryParse(Console.ReadLine(), out double montoPrestamo);
+            Console.WriteLine("Ingrese la tasa de interés anual (en %):");
+            double.TryParse(Console.ReadLine(), out double tasaInteresAnual);
+            Console.WriteLine("Ingrese plazo en meses:");
+            double.TryParse(Console.ReadLine(), out double plazoMeses);
+
+            if (montoPrestamo>0&&tasaInteresAnual>0&&plazoMeses>0)
+            {
+                double interesTotal=montoPrestamo*(tasaInteresAnual/100)*(plazoMeses/12);
+                double cuotaMensual=(montoPrestamo+interesTotal)/plazoMeses;
+
+                Console.WriteLine($"Interes total: {interesTotal}");
+                Console.WriteLine($"Cuota mensual fija: {cuotaMensual}");
+            }
+            else
+            {
+                Console.WriteLine("Todos los valores deben ser positivos.");
+            }
+        }
+    }
+
+
+}

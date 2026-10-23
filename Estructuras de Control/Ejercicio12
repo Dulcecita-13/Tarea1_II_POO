@@ -1,0 +1,44 @@
+namespace TareaPOO
+{
+    public class Ejercicio12
+    {
+        public Ejercicio12()
+        {
+            /*12. Mayor de tres números - Solicitar tres números diferentes 
+            y determinar el mayor usando operadores lógicos (&&). Mostrar 
+            también el menor de los tres.*/
+
+            Console.WriteLine("Ingrese el primer número:");
+            double.TryParse(Console.ReadLine(), out double num1);
+
+            Console.WriteLine("Ingrese el segundo número:");
+            double.TryParse(Console.ReadLine(), out double num2);
+
+            Console.WriteLine("Ingrese el tercer número:");
+            double.TryParse(Console.ReadLine(), out double num3);
+
+            double mayor = num1;
+            if (num2 > mayor)
+            {
+                mayor = num2;
+            }
+            if (num3 > mayor)
+            {
+                mayor = num3;
+            }
+
+            double menor = num1;
+            if (num2 < menor)
+            {
+                menor = num2;
+            }
+            if (num3 < menor)
+            {
+                menor = num3;
+            }
+
+            Console.WriteLine($"El número mayor es: {mayor}");
+            Console.WriteLine($"El número menor es: {menor}");
+        }
+    }
+}

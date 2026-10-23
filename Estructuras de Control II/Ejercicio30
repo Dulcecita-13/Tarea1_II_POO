@@ -1,0 +1,45 @@
+namespace TareaPOO
+{
+    public class Ejercicio30
+    {
+        public Ejercicio30()
+        {
+            /*30. Factorial y combinaciones - Calcular el factorial de N y luego calcular C(n,r) = n! / (r!(n-r)!) para
+valores ingresados.*/
+
+            Console.WriteLine("Ingrese un número N para calcular su factorial:");
+            int.TryParse(Console.ReadLine(), out int N);
+
+            long factorialN = 1;
+            for (int i = 2; i <= N; i++)
+            {
+                factorialN *= i;
+            }
+            Console.WriteLine($"Factorial de {N} es: {factorialN}");
+
+            Console.WriteLine("Ingrese un número r para calcular C(n,r):");
+            int.TryParse(Console.ReadLine(), out int r);
+
+            if (r > N || r < 0)
+            {
+                Console.WriteLine("r debe ser menor o igual a N y no negativo.");
+                return;
+            }
+
+            long factorialR = 1;
+            for (int i = 2; i <= r; i++)
+            {
+                factorialR *= i;
+            }
+
+            long factorialNR = 1;
+            for (int i = 2; i <= (N - r); i++)
+            {
+                factorialNR *= i;
+            }
+
+            long combinacion = factorialN / (factorialR * factorialNR);
+            Console.WriteLine($"C({N},{r}) es: {combinacion}");
+        }
+    }
+}

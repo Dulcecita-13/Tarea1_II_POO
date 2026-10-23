@@ -1,0 +1,25 @@
+namespace TareaPOO
+{
+    public class Ejercicio01
+    {
+        public Ejercicio01()
+        {
+            /*Conversor de moneda - Solicitar un monto en 
+            lempiras y la tasa de cambio del día. Convertir 
+            el monto a dólares y a euros, mostrando los 
+            resultados con dos decimales.*/
+
+            Console.WriteLine("Ingrese el monto en Lempiras:");
+            double.TryParse(Console.ReadLine(),out double monto);
+            Console.WriteLine("Ingrese la tasa de cambio a Dolares: ");
+            double.TryParse(Console.ReadLine(),out double tasaDolar);
+            Console.WriteLine("Ingrese la tasa de cambio a Euros:");
+            double.TryParse(Console.ReadLine(),out double tasaEuro);
+            double montoDolar=monto/tasaDolar;
+            double montoEuro=monto/tasaEuro;
+            Console.WriteLine($"Monto en Dólares: {montoDolar:F2}");
+            Console.WriteLine($"Monto en Euros: {montoEuro:F2}");
+        }
+    }
+
+}

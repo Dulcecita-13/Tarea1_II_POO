@@ -1,0 +1,35 @@
+namespace TareaPOO
+{
+    public class Ejercicio27
+    {
+        public Ejercicio27()
+        {
+            /*27. Inversión de número - Invertir los dígitos de un número entero usando while, división entera y
+módulo. Indicar además si el número es palíndromo (capicúa).*/
+
+            Console.WriteLine("Ingrese un número entero para invertirlo y verificar si es palíndromo:");
+            int.TryParse(Console.ReadLine(), out int numero);
+
+            int numeroOriginal = numero;
+            int numeroInvertido = 0;
+
+            while (numero > 0)
+            {
+                int digito = numero % 10;
+                numeroInvertido = (numeroInvertido * 10) + digito;
+                numero /= 10;
+            }
+
+            Console.WriteLine($"Número invertido: {numeroInvertido}");
+
+            if (numeroOriginal == numeroInvertido)
+            {
+                Console.WriteLine("El número es palíndromo (capicúa).");
+            }
+            else
+            {
+                Console.WriteLine("El número no es palíndromo (capicúa).");
+            }
+        }
+    }
+}
